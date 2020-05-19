@@ -1,0 +1,31 @@
+Welcome to program instructions. In order to use it, follow these rules:
+    - go to usage.py and use router_function;
+    - form message to put into router_function (will be explained how down);
+    - the result will be either shown on console or will get new message saved
+     as "changed_image.png".
+
+How router_function works:
+    - takes two arguments: imagename and list of numbers - arguments for sub functions;
+    - list of arguments should have at least one item, which identifies subfunction
+        to be used (will be explained later);
+    - after the first item in list of argument we put arguments for subfunctions.
+
+    Example: router_function("sample.jpg", [1,20]) -- 1 stands for rotate_image subfuntion
+    which also has one more argument - rotation angle. The result will be saved new image
+    "changed_image.png" and "Done" image on console.
+
+Brief subfunctions description:
+    - rotate_image( rotation_angle ) - takes 1 as id rotates and saves given image,
+        has no additional parameters;
+    - flipper ( flip_type ) - takes 2 as id flips given image (0 - for upside-down flip
+        1 - right-left flip, -1 - both upside-down and right-left flips, otherwise - error)
+    - grayscale_filter - takes 3 as id and has no additional parameters;
+    - sepia_filter - takes 4 as id and has no additional parameters;
+    - add_brightness_to_image - takes 5 as id has 3 additional parameters: R G and B;
+    - negative - takes 6 as id and has no additional parameters;
+    - contrast - takes 7 as id and has 1 additional parameter;
+    - gamma_correction - takes 8 as id and has 1 additional parameter;
+    - Gaussian_blur - takes 9 as id and has no additional parameters;
+    - jpeg_algorithm - takes 10 as id and has no additional parameters;
+    - svd - takes 11 as id and has no additional parameters;
+    - get_predictions - takes 12 as id and has no additional parameters;
