@@ -1,22 +1,7 @@
-'''
-Objective:
-SVD for image compression example
-Author:
-Goran Trlin
-Prerequisites:
-pip install numpy
-pip install pillow
-Video tutorial URL:
-https://www.youtube.com/watch?v=SU851ljMIZ8
-'''
-
 import numpy
 from PIL import Image
 
 
-# FUNCTION DEFINTIONS:
-
-# open the image and return 3 matrices, each corresponding to one channel (R, G and B channels)
 def openImage(imagePath):
     imOrig = Image.open(imagePath)
     im = numpy.array(imOrig)
@@ -28,7 +13,7 @@ def openImage(imagePath):
     return [aRed, aGreen, aBlue, imOrig]
 
 
-# compress the matrix of a single channel
+
 def compressSingleChannel(channelDataMatrix, singularValuesLimit):
     uChannel, sChannel, vhChannel = numpy.linalg.svd(channelDataMatrix)
     aChannelCompressed = numpy.zeros((channelDataMatrix.shape[0], channelDataMatrix.shape[1]))
@@ -43,11 +28,10 @@ def compressSingleChannel(channelDataMatrix, singularValuesLimit):
 def svd(imagename):
     aRed, aGreen, aBlue, originalImage = openImage(imagename)
 
-    # image width and height:
+    
     imageWidth = 512
     imageHeight = 512
 
-    # number of singular values to use for reconstructing the compressed image
     singularValuesLimit = 160
 
     aRedCompressed = compressSingleChannel(aRed, singularValuesLimit)

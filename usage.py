@@ -25,4 +25,4 @@ from general import router_function
 # svd
 # router_function( "sample_5.jpg", [11] )
 # get_predictions
-# router_function( "sample_5.jpg", [12] )
+router_function( "sample_5.jpg", [12] )
